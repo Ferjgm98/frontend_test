@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+    background-color: $decoration-color;
+    color: #fff;
+
+}
+
+*::-moz-selection {
+    background-color: $decoration-color;
+    color: #fff;
+
+}
+
+body {
+    background-color: $background-color;
+    color: #fff;
+    font-family: $main-font;
+    
+}
+
+.section {
+    box-sizing: border-box;
+    margin: 5vw 0;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    font-family: $second-font;
+    color: #fff;
+}
+
+p {
+    font-size: 12px;
+    font-family: $second-font;
+}
+
+.mini-title {
+    padding: 20px 0;
+    font-family: $second-font;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+.title{
+    font-weight: 700;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.btn {
+    font-family: $main-font;
+    font-weight: 300;
+}
+
+img {
+    width: 100%;
+    user-select: none;
+}
+
+.background-text {
+    display: block;
+    font-size: 15em;
+    font-family: $second-font;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+    color: rgba($color: #000000, $alpha: .3);
+    transition: all 0.5s ease;
+    user-select: none;
+    z-index: -1;
+    top: 20%;
+    left: 0;
+    width: 100%;
+}
+
+.call-to-action{
+    text-transform: uppercase;
+}
+
+.input {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    border: 1px solid #fff;
+    margin: 0;
+    padding: 8px;
+    transition: all .6s ease-in-out;
+}
+
+button:focus {
+    outline: none;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: 0;
+    z-index: 100;
+    height: 100vh;
+    min-height: 100%;
+    width: 100%;
+}

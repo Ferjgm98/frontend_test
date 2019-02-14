@@ -1,0 +1,117 @@
+.section-contact {
+    position: relative;
+    .contact-text {
+        display: none;
+    }
+    .title {
+        margin: 20px 15px;
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            background-color: #fff;
+            height: 1px;
+            width: 100px;
+            position: absolute;
+            bottom: -20%;
+            left: -15%;
+            z-index: -1;
+        }
+    }
+
+    .description {
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    .contact-btn {
+        font-size: 1.1em;
+        position: relative;
+        z-index: 1;
+        transition: all .8s 0s cubic-bezier(.7, 0, .3, 1);
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+
+        }
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+        &::after {
+            background-color: $decoration-color;
+            height: 80%;
+            width: 50%;
+            top: 10%;
+            left: -10%;
+            transition: all .8s 0s cubic-bezier(.7, 0, .3, 1);
+            opacity: 1;
+        }
+
+        &:hover::after {
+            left: 100%;
+            opacity: 0;
+            width: 15%;
+        }
+
+        &::before {
+            background-color: #1a1a1a;
+            height: 80%;
+            width: 0;
+            top: 10%;
+            left: -10%;
+            transition: all .4s 0s cubic-bezier(.7, 0, .3, 1);
+        }
+
+        &:hover::before {
+            left: 50%;
+            width: 70%;
+            left: -15%;
+        }
+    }
+
+    .map-box {
+        position: relative;
+        overflow: hidden;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        background-color: $background-color;
+        background-size: cover;
+        box-shadow: rgba($color: #000000, $alpha: .2);
+        transition: all .3s 0s cubic-bezier(.7, 0, .3, 1);
+        height: 280px;
+    }
+}
+
+/**
+    Responsive
+*/
+
+@media (min-width: 768px) {
+    .section-contact {
+        padding-bottom: 4em; 
+        overflow-x: hidden;
+        .contact-text {
+            display: initial;
+            top: 48%;
+            left: 16%;
+            z-index: -1;
+
+        }
+        .map-box {
+            height: 380px;
+            overflow: hidden;
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+        }
+    }
+
+    .foo-alt {
+        padding-top: 0; 
+    }
+}

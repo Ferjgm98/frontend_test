@@ -1,0 +1,153 @@
+.section-video {
+    position: relative;
+    margin: 7vw 0;
+
+    &:hover .control-video{
+        opacity: 1;
+    }
+}
+
+.video-item {
+    background: #0f0f0f;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+
+
+.control-video {
+    opacity: 0;
+    transition: opacity .6s 50ms ease-out;
+
+    & [data-media=play-pause] {
+        color: #fff;
+        box-shadow: 0 0 0 $background-color;
+        transition: all .6s 0s cubic-bezier(.7,0,.3,1);
+        font-family: $second-font;
+        letter-spacing: 5px;
+        font-size: 11px;
+
+        &:hover {
+            background: $decoration-color;
+            box-shadow: 0 0 0 10px $decoration-color;
+        }
+    }
+}
+
+[data-media] {
+    background: $background-color;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    position: relative;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .2em;
+    line-height: .75em;
+    cursor: pointer;
+}
+
+[data-media=play-pause] {
+    display: block;
+    position: absolute;
+    top: -9px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 1;
+    transition: opacity .6s 50ms ease-out;
+}
+
+
+.paused [data-media=play-pause]::before, .playing [data-media=play-pause]::before {
+    height: 20px;
+    width: 60px;
+    margin: auto;
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 5px;
+    opacity: 1;
+    right: 0;
+    z-index: 1;
+}
+
+.unplayed {
+    & .control-video {
+        opacity: 1;
+    }
+}
+
+.paused [data-media=play-pause]::before {
+    content: 'PLAY';
+}
+.playing [data-media=play-pause]::before {
+    content: 'PAUSE';
+}
+
+[data-media=mute-unmute] {
+    background-image: url('../images/volume-up-solid.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    display: block;
+    border-radius: 0;
+    height: 20px;
+    width: 20px;
+    opacity: .5;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: all .6s 0s cubic-bezier(.7,0,.3,1);
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.muted [data-media=mute-unmute] {
+    background-image: url('../images/volume-mute-solid.svg');
+}
+
+
+@media (min-width: 768px) {
+    .video-item {
+        height: 100%;
+    }
+
+    .control-video {
+        & [data-media=play-pause] {
+            font-size: 15px;
+        }
+    }
+
+    [data-media] {
+        height: 120px;
+        width: 120px;
+        margin: auto;
+        font-weight: 700;
+        letter-spacing: .3em;
+        line-height: 1em;
+        cursor: pointer;
+    }
+
+    .paused [data-media=play-pause]::before, .playing [data-media=play-pause]::before {
+        height: 26px;
+        width: 100px;
+        margin: 0;
+        top: 50px;
+        left: 13px;
+    }
+
+    [data-media=mute-unmute] {
+        height: 35px;
+        width: 35px;
+    }
+}
